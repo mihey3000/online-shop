@@ -1,9 +1,7 @@
 <template>
   <div class="shop">
     <div class="shop_basket">
-      <router-link
-        :to="{ name: 'cart' }"
-      >
+      <router-link :to="{ name: 'cart' }">
         <button class="shop_button" @click="changePage">
           <span class="shop_cart">Cart</span>
           <span v-if="numberInCart">
@@ -13,10 +11,7 @@
       </router-link>
     </div>
 
-    <catalog-store-notifications 
-      :messages="messages" 
-      :type-alert="typeAlert"
-    >
+    <catalog-store-notifications :messages="messages" :type-alert="typeAlert">
     </catalog-store-notifications>
 
     <h1 class="shop_title">Catalog</h1>
@@ -67,17 +62,6 @@ export default {
       messages: [],
       typeAlert: "check_circle",
     };
-  },
-  mounted() {
-    // window.addEventListener('scroll', function() {
-    //   let header = document.querySelector('.shop_basket')
-    //   let posTop = window.pageYOffset;
-    //   if (posTop !== 0) {
-    //     header.style.opacity = 0.5
-    //   } else {
-    //     header.style.opacity = 1
-    //   }
-    // });
   },
   computed: {
     ...mapGetters([
